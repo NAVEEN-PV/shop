@@ -1,0 +1,15 @@
+<form>
+    CARD NUMBER : {{input type="text" value=c}}
+    <br>
+    <br>
+    CVV : {{input type="text" value=cvv}} 
+    <br>
+    <br>
+    EXPIRE DATE : {{input type="text" value=e}} 
+     <button class="add" {{action "store" c cvv e }}>submit</button>
+</form>
+{{#link-to "bill" }}
+  <h2>bill</h2>
+  {{/link-to}}
+
+{{outlet}}

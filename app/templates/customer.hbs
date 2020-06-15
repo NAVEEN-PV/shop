@@ -1,0 +1,38 @@
+<h1>customer details</h1>
+<form>
+    <div class=" {{if errors.NAME  'has-error'}}">
+    NAME : {{input type="text" value=c}}
+    {{#each errors.NAME  as |error|}}
+    <span>{{error.message}}</span>
+    {{/each}}
+    <br>
+    <br>
+    </div>
+    <div>
+    
+    <br>
+    <br>
+    </div>
+    EMAILID : {{input type="text" value=e}} 
+    {{#each errors.EMAILID  as |error|}}
+    <span>{{error.message}}</span>
+    {{/each}}
+    MOBILE : {{input type="text" value=m}} 
+    {{#each errors.MOBILE  as |error|}}
+    <span>{{error.message}}</span>
+    {{/each}}
+    <br>
+     <button class="add" {{action "store"   e m}}>submit</button>
+</form>
+<p>{{model.customer}}</p>
+
+<h1>PAYMENT METHOD</h1>
+{{#link-to "bill" }}
+  <label>cash</label>
+  {{/link-to}}
+  <br>
+  {{#link-to "payment" }}
+  <label>card</label>
+  {{/link-to}}
+
+{{outlet}}
